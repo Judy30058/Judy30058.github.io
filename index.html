@@ -22,8 +22,7 @@
         .image-container img {
             position: absolute;
             height: auto;
-            object-fit: cover;
-            
+            object-fit: cover;  
         }
         #image1 {
             top:25%;
@@ -34,36 +33,43 @@
             bottom: 30%;
             right:26%; 
             max-width: 40%;
-
         }
         #image4 {
             bottom: 0;
             max-width: 70%;
         }
-        
         #image5 {
             top: 0;
             max-width: 100%;
-        }
-        
+        } 
         #image6 {
             bottom: 0;
             max-width: 100%;
             z-index: -1;
         }
-        
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <img id="image1" src="images/cover1.png" alt="Cover Image 1">
-        <a href="p1.html">
-        <img id="image3" src="images/cover3.png" alt="Cover Image 3">
-        </a>
-        <img id="image4" src="images/cover4.png" alt="Cover Image 4">
-        <img id="image5" src="images/cover5.png" alt="Cover Image 5">
-        <img id="image6" src="images/cover6.png" alt="Cover Image 6">
-
+    <div class="outer-container" >
+        <div class="image-container" data-simplebar>
+            <img id="image1" src="images/cover1.png" alt="Cover Image 1">
+            <a href="p1.html">
+                <img id="image3" src="images/cover3.png" alt="Cover Image 3">
+            </a>
+            <img id="image4" src="images/cover4.png" alt="Cover Image 4">
+            <img id="image5" src="images/cover5.png" alt="Cover Image 5">
+            <img id="image6" src="images/cover6.png" alt="Cover Image 6">
+        </div>
     </div>
+     <script>
+         function setVhProperty() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        window.addEventListener('resize', setVhProperty);
+        window.addEventListener('load', setVhProperty);
+        setVhProperty();
+     </script>
+    
 </body>
 </html>
